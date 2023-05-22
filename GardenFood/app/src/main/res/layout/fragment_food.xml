@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.gardenfood.ui.food.menu.viewmodel.FoodViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.food.FoodFragment">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="317dp"
+        android:layout_height="324dp"
+        android:layout_marginTop="50dp"
+        android:shadowColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/amburquesa" />
+
+    <TextView
+        android:id="@+id/name_food_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:text="@={viewmodel.name}"
+        app:layout_constraintEnd_toStartOf="@+id/qualifire_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:text="Amburquesa" />
+
+    <TextView
+        android:id="@+id/description_food_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@={viewmodel.description}"
+        tools:text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut incidunt non possimus, aperiam eligendi molestiae doloribus magni, nihil cumque illo corrupti fugiat voluptas voluptatibus minus corporis dicta error. Nemo, repellat?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_food_text_view" />
+
+    <TextView
+        android:id="@+id/qualifire_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="64dp"
+        android:textColor="@color/red"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/name_food_text_view"
+        android:text="@={viewmodel.price}"
+        tools:text="8.3" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

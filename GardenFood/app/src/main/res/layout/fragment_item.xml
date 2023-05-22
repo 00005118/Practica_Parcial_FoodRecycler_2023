@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.gardenfood.ui.food.menu.viewmodel.FoodViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.food.ItemFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/food_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            >
+
+            <!--para diseña una card se necesita crear una cardView y ADENTRO del card view se organiza con un constrain layout-->
+
+            <ImageView
+                android:id="@+id/Amburger_image_View"
+                android:layout_width="133dp"
+                android:layout_height="91dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/amburquesa"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/name_food_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/Amburger_image_View"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Amburguesa" />
+
+            <TextView
+                android:id="@+id/price_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:textColor="@color/red"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/name_food_text_view"
+                app:layout_constraintTop_toTopOf="@+id/name_food_text_view"
+                tools:text="9.8" />
+
+            <TextView
+                android:id="@+id/description_food_text_view"
+                android:layout_width="176dp"
+                android:layout_height="81dp"
+                app:layout_constraintStart_toStartOf="@+id/name_food_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/name_food_text_view"
+                tools:text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut incidunt non possimus, aperiam eligendi molestiae doloribus magni, nihil cumque illo corrupti fugiat voluptas voluptatibus minus corporis dicta error. Nemo, repellat?" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
